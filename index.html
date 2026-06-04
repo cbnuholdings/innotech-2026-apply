@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 충북청주강소특구 이노테크 창업 신청서</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+  :root{
+    --navy:#1b2a4a; --blue:#2563eb; --blue-light:#eff4ff; --green:#15803d;
+    --gray:#6b7280; --line:#e5e7eb; --bg:#f5f7fb; --red:#dc2626; --yellow:#fef9c3;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Malgun Gothic','맑은 고딕',-apple-system,sans-serif;background:var(--bg);color:#1f2937;line-height:1.6;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px;}
+  /* Header */
+  header{background:linear-gradient(135deg,#1b2a4a,#2b3f6b);color:#fff;padding:34px 24px;text-align:center;border-radius:0 0 18px 18px;}
+  header .tag{display:inline-block;background:rgba(255,255,255,.15);padding:4px 14px;border-radius:20px;font-size:13px;letter-spacing:1px;margin-bottom:12px;}
+  header h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;}
+  header p{margin:8px 0 0;opacity:.85;font-size:14px;}
+  /* Progress */
+  .progress{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:13px;}
+  .progress span{padding:4px 12px;border-radius:14px;background:#eef1f6;color:#9aa3b2;font-weight:600;}
+  .progress span.on{background:var(--blue);color:#fff;}
+  .bar{height:5px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-top:8px;}
+  .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2563eb,#15803d);transition:width .3s;}
+  /* Card */
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .card h2{margin:0 0 4px;font-size:19px;color:var(--navy);display:flex;align-items:center;gap:8px;}
+  .card h2 .num{background:var(--blue);color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;}
+  .card .desc{color:var(--gray);font-size:13px;margin:0 0 18px;}
+  /* Notice */
+  details.notice{background:var(--blue-light);border:1px solid #d6e2ff;border-radius:12px;padding:14px 18px;margin-top:18px;}
+  details.notice summary{font-weight:700;color:var(--navy);cursor:pointer;font-size:15px;}
+  details.notice table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;}
+  details.notice td,details.notice th{border:1px solid #cdd9f0;padding:7px 9px;text-align:left;}
+  details.notice th{background:#dde7fb;}
+  /* Fields */
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:640px){.row,.row3{grid-template-columns:1fr;}}
+  .f{margin-bottom:15px;}
+  .f label{display:block;font-weight:700;font-size:13.5px;margin-bottom:5px;color:#374151;}
+  .f label .req{color:var(--red);font-size:12px;margin-left:3px;}
+  .f label .opt{color:var(--gray);font-size:11px;font-weight:500;margin-left:5px;background:#f1f2f6;padding:1px 7px;border-radius:8px;}
+  .f input[type=text],.f input[type=email],.f input[type=tel],.f input[type=date],.f select,.f textarea{
+    width:100%;padding:11px 12px;border:1px solid #d1d5db;border-radius:9px;font-size:14px;font-family:inherit;background:#fff;transition:border .15s,box-shadow .15s;}
+  .f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12);}
+  .f textarea{resize:vertical;min-height:80px;}
+  .f .hint{font-size:12px;color:var(--gray);margin-top:4px;}
+  .f .ex{font-size:12px;color:#9ca3af;font-style:italic;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chips label{display:inline-flex;align-items:center;gap:6px;border:1px solid #d1d5db;border-radius:20px;padding:7px 14px;font-size:13px;cursor:pointer;font-weight:500;user-select:none;}
+  .chips label:hover{border-color:var(--blue);}
+  .chips input{accent-color:var(--blue);}
+  .chips input:checked+span{font-weight:700;color:var(--blue);}
+  .radio-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+  @media(max-width:640px){.radio-cards{grid-template-columns:1fr;}}
+  .radio-cards label{border:1.5px solid #d1d5db;border-radius:11px;padding:13px;cursor:pointer;transition:.15s;}
+  .radio-cards label:hover{border-color:var(--blue);}
+  .radio-cards input{display:none;}
+  .radio-cards input:checked+.rc{color:var(--blue);}
+  .radio-cards label:has(input:checked){border-color:var(--blue);background:var(--blue-light);}
+  .rc b{display:block;font-size:14px;}
+  .rc small{color:var(--gray);font-size:12px;}
+  .warn{color:var(--red);font-size:12.5px;margin-top:5px;display:none;font-weight:600;}
+  .ok-badge{color:var(--green);font-size:12.5px;margin-top:5px;display:none;font-weight:600;}
+  /* Lean canvas */
+  .lc-intro{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:12px 16px;font-size:13px;color:#166534;margin-bottom:16px;}
+  .lc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:640px){.lc-grid{grid-template-columns:1fr;}}
+  .lc-cell label{font-size:13px;}
+  .lc-cell .tagn{display:inline-block;background:var(--navy);color:#fff;width:20px;height:20px;border-radius:5px;text-align:center;font-size:11px;line-height:20px;margin-right:5px;}
+  .lc-cell textarea{min-height:64px;}
+  /* Consent */
+  .consent-box{max-height:200px;overflow:auto;border:1px solid var(--line);border-radius:9px;padding:14px;font-size:12.5px;color:#4b5563;background:#fafbfc;}
+  .consent-box table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px;}
+  .consent-box td,.consent-box th{border:1px solid var(--line);padding:6px;}
+  .consent-check{display:flex;align-items:center;gap:10px;margin-top:14px;font-weight:700;font-size:14.5px;background:var(--yellow);padding:12px 14px;border-radius:9px;}
+  .consent-check input{width:19px;height:19px;accent-color:var(--blue);}
+  /* Buttons */
+  .actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+  .btn{flex:1;min-width:200px;padding:15px;border:none;border-radius:11px;font-size:15.5px;font-weight:700;cursor:pointer;transition:.15s;font-family:inherit;}
+  .btn-ghost{background:#fff;border:1.5px solid var(--blue);color:var(--blue);}
+  .btn-ghost:hover{background:var(--blue-light);}
+  .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;}
+  .btn-primary:hover{filter:brightness(1.07);}
+  .btn-soft{background:#eef2ff;border:1.5px solid #c7d2fe;color:#3730a3;}
+  .btn-soft:hover{background:#e0e7ff;}
+  .btn-warn{background:#fff;border:1.5px solid #e5a3a3;color:#b91c1c;}
+  .btn-warn:hover{background:#fef2f2;}
+  .btn:disabled{opacity:.5;cursor:not-allowed;}
+  .save-note{text-align:center;font-size:12px;color:var(--gray);margin-top:10px;}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:#1f2937;color:#fff;padding:12px 22px;border-radius:24px;font-size:14px;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.25s;z-index:300;}
+  .toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+  /* Overlay */
+  .overlay{position:fixed;inset:0;background:rgba(15,23,42,.6);display:none;align-items:center;justify-content:center;z-index:200;}
+  .overlay.on{display:flex;}
+  .modal{background:#fff;border-radius:16px;padding:34px;max-width:440px;width:90%;text-align:center;}
+  .modal .ico{font-size:46px;}
+  .modal h3{margin:14px 0 6px;color:var(--navy);}
+  .modal .rn{font-size:22px;font-weight:800;color:var(--blue);letter-spacing:1px;margin:10px 0;background:var(--blue-light);padding:10px;border-radius:10px;}
+  .modal button{margin-top:18px;padding:11px 28px;border:none;border-radius:9px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;font-size:15px;}
+  .spinner{width:46px;height:46px;border:5px solid #e5e7eb;border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  /* PDF preview area (hidden offscreen, used for capture) */
+  #pdfArea{position:absolute;left:-9999px;top:0;width:794px;background:#fff;padding:40px;font-size:13px;color:#111;z-index:-1;}
+  #pdfArea h1{font-size:20px;text-align:center;border-bottom:3px solid #1b2a4a;padding-bottom:10px;}
+  #pdfArea h2{font-size:15px;background:#1b2a4a;color:#fff;padding:6px 10px;margin:18px 0 8px;border-radius:4px;}
+  #pdfArea table{width:100%;border-collapse:collapse;margin:6px 0;}
+  #pdfArea td,#pdfArea th{border:1px solid #cbd5e1;padding:7px 9px;vertical-align:top;font-size:12.5px;}
+  #pdfArea th{background:#eef2f9;width:130px;text-align:left;}
+  #pdfArea .lcp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+  #pdfArea .lcp .b{border:1px solid #cbd5e1;border-radius:5px;padding:8px;min-height:58px;font-size:11.5px;}
+  #pdfArea .lcp .b b{display:block;color:#1b2a4a;font-size:11px;margin-bottom:4px;}
+  #pdfArea .pre{white-space:pre-wrap;}
+</style>
+</head>
+<body>
+<header>
+  <span class="tag">충북대학교기술지주(주) · 충북청주강소연구개발특구</span>
+  <h1>2026 충북청주강소특구 이노테크 창업 신청</h1>
+  <p>창업 아이템 검증(MVP) 지원 및 강소특구 연계 IR 경진대회 · 15개팀 내외 모집</p>
+  <p style="margin-top:6px;font-weight:700;">📅 신청기간 2026. 06. 08(월) ~ 2026. 06. 30(화) 15:00까지</p>
+</header>
+
+<div class="progress">
+  <div style="width:100%;max-width:760px;">
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+      <span data-step="1" class="on">1. 기업·대표자</span>
+      <span data-step="2">2. 사업계획서</span>
+      <span data-step="3">3. 개인정보 동의</span>
+      <span data-step="4">4. 제출</span>
+    </div>
+    <div class="bar"><i id="barFill"></i></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <details class="notice">
+    <summary>📋 사업 안내 · 신청자격 · 지원내용 (펼쳐보기)</summary>
+    <p style="font-size:13px;margin:12px 0 4px;"><b>신청자격</b> (아래 중 하나 + 만 39세 미만 · 청주시 소재)</p>
+    <ul style="font-size:13px;margin:4px 0;">
+      <li>충북청주특구 기술핵심기관(대학·연구소) 기반 재·휴학생 및 연구자</li>
+      <li>만 39세 미만 예비창업자 및 창업기업(2026.1.1. 이후 창업 포함)</li>
+      <li>청주시 소재 예비·초기(3년 미만) 창업자 <span style="color:#dc2626;">※ 청주 외 지역 지원 불가</span></li>
+      <li>※ 공공기술이전 기반 기술사업화(딥테크) 분야 우대</li>
+    </ul>
+    <table>
+      <tr><th>지원 구분</th><th>내용</th></tr>
+      <tr><td>사업화 자금(MVP)</td><td>기업당 500만원 내외 (바우처형, 자부담 10%)</td></tr>
+      <tr><td>PoC 후속지원</td><td>데모데이 우수 2개사, 최대 1,000만원</td></tr>
+      <tr><td>창업 고도화</td><td>실전 IR 피칭·런웨이 캠프, 선배기업 네트워킹, 역량 교육</td></tr>
+      <tr><td>글로벌·오픈이노베이션</td><td>초광역 IR 데모데이, 1:1 프라이빗 밋업, 글로벌 IR</td></tr>
+    </table>
+    <p style="font-size:12px;color:#475569;margin-top:8px;">※ 2026년 이내 법인 설립(창업) 완료 전제 · 국가연구개발혁신법 및 특구재단 사업비 관리지침 준수</p>
+  </details>
+
+  <!-- STEP 1 -->
+  <section class="card" id="sec1">
+    <h2><span class="num">1</span> 기업 · 대표자 정보</h2>
+    <p class="desc">서식1. 예비창업자는 기업명란에 창업자명을 기재하세요.</p>
+
+    <div class="row">
+      <div class="f">
+        <label>기업명 / 창업자명<span class="req">*</span></label>
+        <input type="text" id="기업명" placeholder="(예비창업자는 창업자명)">
+      </div>
+      <div class="f">
+        <label>창업 아이템 (한 줄)<span class="req">*</span></label>
+        <input type="text" id="창업아이템" placeholder="간략히 기재">
+      </div>
+    </div>
+
+    <div class="f">
+      <label>사업장 소재지<span class="req">*</span></label>
+      <input type="text" id="사업장소재지" placeholder="사업자등록증상 소재지 또는 창업 예정 소재지">
+      <div class="warn" id="warn청주">⚠ 청주시 소재가 아닌 경우 지원이 불가합니다. 주소를 확인해 주세요.</div>
+      <div class="ok-badge" id="ok청주">✓ 청주시 소재 확인</div>
+    </div>
+
+    <div class="f">
+      <label>신청 Track<span class="req">*</span></label>
+      <div class="radio-cards" id="track">
+        <label><input type="radio" name="track" value="일반창업"><span class="rc"><b>① 일반창업</b><small>일반 예비·초기창업</small></span></label>
+        <label><input type="radio" name="track" value="청년창업"><span class="rc"><b>② 청년창업</b><small>만 39세 미만</small></span></label>
+        <label><input type="radio" name="track" value="학생창업"><span class="rc"><b>③ 학생창업</b><small>기술핵심기관 재·휴학생</small></span></label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="f">
+        <label>창업 여부<span class="req">*</span></label>
+        <select id="창업여부">
+          <option value="">선택하세요</option>
+          <option value="미창업">미창업 (예비창업자)</option>
+          <option value="창업">창업 (사업자 보유)</option>
+        </select>
+      </div>
+      <div class="f">
+        <label>창업 분야<span class="req">*</span> <span class="opt">복수 선택</span></label>
+        <div class="chips" id="분야">
+          <label><input type="checkbox" value="IT"><span>IT</span></label>
+          <label><input type="checkbox" value="BT"><span>BT</span></label>
+          <label><input type="checkbox" value="CT"><span>CT</span></label>
+          <label><input type="checkbox" value="NT"><span>NT</span></label>
+          <label><input type="checkbox" value="ET"><span>ET</span></label>
+          <label><input type="checkbox" value="ST"><span>ST</span></label>
+          <label><input type="checkbox" value="기타"><span>기타</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="bizRow" style="display:none;">
+      <div class="f">
+        <label>사업자등록번호</label>
+        <input type="text" id="사업자등록번호" placeholder="000-00-00000">
+      </div>
+      <div class="f">
+        <label>창업(등록)일</label>
+        <input type="date" id="창업등록일">
+        <div class="warn" id="warn업력">⚠ 창업 3년 이상은 초기창업 자격에서 제외될 수 있습니다.</div>
+      </div>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--line);margin:18px 0;">
+
+    <div class="row">
+      <div class="f">
+        <label>대표자 성명<span class="req">*</span></label>
+        <input type="text" id="대표자성명">
+      </div>
+      <div class="f">
+        <label>생년월일<span class="req">*</span></label>
+        <input type="date" id="생년월일">
+        <div class="warn" id="warn나이">⚠ 만 39세 미만 대상입니다 (청년·학생 트랙). 자격을 확인해 주세요.</div>
+        <div class="ok-badge" id="ok나이"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="f">
+        <label>휴대전화<span class="req">*</span></label>
+        <input type="tel" id="휴대전화" placeholder="010-0000-0000">
+      </div>
+      <div class="f">
+        <label>이메일<span class="req">*</span></label>
+        <input type="email" id="이메일" placeholder="name@example.com">
+        <div class="hint">접수확인 메일이 이 주소로 발송됩니다.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="f">
+        <label>기술핵심기관 연계 <span class="opt">선택</span></label>
+        <input type="text" id="기술핵심기관" placeholder="예: 충북대학교 OO연구실 / 한국교통대 등">
+      </div>
+      <div class="f">
+        <label>공공기술이전(딥테크) 여부 <span class="opt">우대</span></label>
+        <div class="chips"><label><input type="checkbox" id="딥테크"><span>공공기술이전 기반 사업화에 해당</span></label></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="card" id="sec2">
+    <h2><span class="num">2</span> 사업계획서</h2>
+    <p class="desc">예비·초기창업자를 위해 핵심만 작성합니다. <b style="color:var(--red)">①사업아이템 설명</b>과 <b style="color:var(--red)">②비즈니스 모델(린캔버스)의 핵심 4칸</b>은 필수, 나머지는 아는 만큼 작성하세요.</p>
+
+    <div class="row">
+      <div class="f">
+        <label>사업 아이템명<span class="req">*</span></label>
+        <input type="text" id="사업아이템명" placeholder="제품·서비스의 이름">
+      </div>
+      <div class="f">
+        <label>한 줄 소개 <span class="opt">선택</span></label>
+        <input type="text" id="한줄소개" placeholder="누구의 어떤 문제를 어떻게 해결하는지 한 문장">
+      </div>
+    </div>
+
+    <div class="f">
+      <label>① 사업 아이템 설명<span class="req">*</span></label>
+      <textarea id="사업아이템설명" style="min-height:130px;" placeholder="• 어떤 제품/서비스인가요?
+• 어떤 고객의 어떤 문제(불편)를 해결하나요?
+• 핵심 기능과 현재 개발 단계(아이디어/시제품/MVP 등)는?
+• (해당 시) 활용하는 공공기술·특허·핵심 기술은?"></textarea>
+      <div class="hint">분량 제한 없음 · 자유롭게 서술하세요.</div>
+    </div>
+
+    <div class="lc-intro">💡 <b>린캔버스(Lean Canvas)</b>는 한 장으로 사업모델을 정리하는 도구입니다. 각 칸은 1~3줄이면 충분합니다. 잘 모르는 칸은 비워두셔도 됩니다(필수 칸 제외).</div>
+
+    <div class="lc-grid">
+      <div class="f lc-cell"><label><span class="tagn">1</span>문제<span class="req">*</span></label>
+        <textarea id="LC1" placeholder="해결하려는 고객의 핵심 문제 1~3가지"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">2</span>고객군<span class="req">*</span></label>
+        <textarea id="LC2" placeholder="누가 이 문제를 가지고 있나요? (목표 고객/초기 사용자)"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">3</span>고유의 가치 제안<span class="req">*</span></label>
+        <textarea id="LC3" placeholder="왜 우리 제품이어야 하는가? 차별화된 한 문장"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">4</span>솔루션<span class="req">*</span></label>
+        <textarea id="LC4" placeholder="문제를 해결하는 우리의 방법(핵심 기능)"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">5</span>채널 <span class="opt">선택</span></label>
+        <textarea id="LC5" placeholder="고객에게 도달·판매하는 경로 (온라인/오프라인/B2B 등)"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">6</span>수익원 <span class="opt">선택</span></label>
+        <textarea id="LC6" placeholder="어떻게 돈을 버나요? (판매/구독/수수료 등)"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">7</span>비용 구조 <span class="opt">선택</span></label>
+        <textarea id="LC7" placeholder="주요 비용 항목 (개발/인건비/마케팅 등)"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">8</span>핵심 지표 <span class="opt">선택</span></label>
+        <textarea id="LC8" placeholder="성장을 측정할 핵심 숫자 (가입자/매출/재구매 등)"></textarea></div>
+      <div class="f lc-cell"><label><span class="tagn">9</span>경쟁 우위 <span class="opt">선택</span></label>
+        <textarea id="LC9" placeholder="쉽게 모방할 수 없는 강점 (기술/특허/팀/네트워크)"></textarea></div>
+    </div>
+  </section>
+
+  <!-- STEP 2-1 : 파일 첨부 -->
+  <section class="card" id="sec2a">
+    <h2><span class="num">2-1</span> 파일 첨부</h2>
+    <p class="desc">아래 자료를 첨부해 주세요. <b>사업계획서 PDF에는 포함되지 않으며</b>, 접수 후 별도 관리DB에 함께 제출됩니다. · 파일당 최대 30MB</p>
+
+    <div class="f">
+      <label>① 회사소개서 또는 IR 자료 <span class="opt">권장</span></label>
+      <input type="file" id="fileIR" accept=".pdf,.ppt,.pptx,.key,.doc,.docx,application/pdf">
+      <div class="hint">PDF·PPT 등. 회사소개서 또는 IR 피칭자료 중 하나를 올려주세요.</div>
+      <div class="warn" id="warnIR">⚠ 파일이 너무 큽니다(최대 30MB). 다른 파일을 선택해 주세요.</div>
+    </div>
+
+    <div class="f" id="bizFileRow">
+      <label>② 사업자등록증 <span class="opt">예비창업자 제외</span></label>
+      <input type="file" id="fileBiz" accept=".pdf,image/*,application/pdf">
+      <div class="hint">사업자등록증 사본(PDF 또는 이미지). 창업자는 첨부해 주세요. 예비창업자(미창업)는 제출하지 않아도 됩니다.</div>
+      <div class="warn" id="warnBiz">⚠ 파일이 너무 큽니다(최대 30MB). 다른 파일을 선택해 주세요.</div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="card" id="sec3">
+    <h2><span class="num">3</span> 개인정보 수집 · 이용 동의</h2>
+    <p class="desc">서식2. 개인정보보호법 제15조에 따른 동의 (거부 시 신청 불가)</p>
+    <div class="consent-box">
+      <table>
+        <tr><th>수집 항목</th><th>이용 목적</th><th>보유 기간</th></tr>
+        <tr><td>성명, 생년월일, 소속/직위, 휴대전화/이메일</td><td>개인 식별, 공지사항 전달 등</td><td>제공일로부터 5년 후 삭제</td></tr>
+      </table>
+      <p>개인정보 수집·이용에 관한 동의는 개인정보보호법 제15조에 의거하여 거부할 수 있으나, 거부할 경우 프로그램 참가신청이 불가합니다. 관계법령: 개인정보 보호법 제15조, 제22조제1항·제2항.</p>
+    </div>
+    <label class="consent-check"><input type="checkbox" id="개인정보동의"> 위 내용을 모두 읽고 숙지하였으며, 개인정보 수집 및 이용에 <b>동의</b>합니다.</label>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="card" id="sec4">
+    <h2><span class="num">4</span> 미리보기 및 제출</h2>
+    <p class="desc">제출 시 사업계획서가 PDF로 생성되어, <b>① 신청자 본인 메일</b> 및 <b>② 운영기관</b>으로 동시 접수되며, <b>제출번호</b>가 발급됩니다.</p>
+
+    <div class="actions" style="margin-bottom:0;">
+      <button class="btn btn-soft" id="btnSaveDraft">💾 임시저장</button>
+      <button class="btn btn-warn" id="btnReset">🔄 초기화</button>
+    </div>
+    <div class="actions">
+      <button class="btn btn-ghost" id="btnPreview">📄 사업계획서 PDF 미리보기·다운로드</button>
+      <button class="btn btn-primary" id="btnSubmit">🚀 신청서 제출하기</button>
+    </div>
+    <div class="save-note" id="saveStatus">✍️ 작성 내용은 이 브라우저에 자동 임시저장됩니다. ‘임시저장’으로 즉시 저장할 수 있어요.</div>
+  </section>
+</div>
+
+<!-- offscreen PDF template -->
+<div id="pdfArea"></div>
+
+<!-- overlay -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modalBody"></div>
+</div>
+
+<!-- toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===================== 설정 ===================== */
+// GAS 웹앱 배포 후 받은 URL을 여기에 붙여넣으세요.
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzV4F8BcwqAOIxCJOJxCraPHFEhdzaHuMS8QEXaQQqMD74z4zYCx6de-bbJSU6NLMjWww/exec";
+/* ================================================ */
+
+const $ = id => document.getElementById(id);
+const val = id => ($(id) ? $(id).value.trim() : "");
+
+/* ---- 청주 소재 자동 감지 ---- */
+$("사업장소재지").addEventListener("input", e=>{
+  const v = e.target.value;
+  const isCJ = v.includes("청주");
+  $("warn청주").style.display = (v && !isCJ) ? "block" : "none";
+  $("ok청주").style.display = isCJ ? "block" : "none";
+});
+
+/* ---- 창업여부 → 사업자 정보 토글 ---- */
+$("창업여부").addEventListener("change", e=>{
+  $("bizRow").style.display = e.target.value==="창업" ? "grid" : "none";
+});
+
+/* ---- 만 나이 자동 계산 (2026 기준) ---- */
+$("생년월일").addEventListener("change", e=>{
+  if(!e.target.value) return;
+  const b = new Date(e.target.value);
+  const ref = new Date("2026-06-08");
+  let age = ref.getFullYear()-b.getFullYear();
+  const m = ref.getMonth()-b.getMonth();
+  if(m<0 || (m===0 && ref.getDate()<b.getDate())) age--;
+  $("ok나이").textContent = "만 "+age+"세 (2026.6.8 기준)";
+  $("ok나이").style.display="block";
+  $("warn나이").style.display = age>=39 ? "block" : "none";
+});
+
+/* ---- 업력 체크 ---- */
+$("창업등록일").addEventListener("change", e=>{
+  if(!e.target.value){ $("warn업력").style.display="none"; return; }
+  const d=new Date(e.target.value), ref=new Date("2026-06-08");
+  const yrs=(ref-d)/(1000*60*60*24*365);
+  $("warn업력").style.display = yrs>=3 ? "block":"none";
+});
+
+/* ---- 진행률 ---- */
+const fieldsToTrack = ["기업명","창업아이템","사업장소재지","대표자성명","생년월일","휴대전화","이메일","사업아이템명","사업아이템설명","LC1","LC2","LC3","LC4"];
+function updateProgress(){
+  let filled=0;
+  fieldsToTrack.forEach(f=>{ if(val(f)) filled++; });
+  if(getTrack()) filled++;
+  if($("창업여부").value) filled++;
+  if(get分야().length) filled++;
+  if($("개인정보동의").checked) filled++;
+  const total=fieldsToTrack.length+4;
+  $("barFill").style.width=Math.round(filled/total*100)+"%";
+}
+document.querySelectorAll("input,textarea,select").forEach(el=>{
+  el.addEventListener("input",()=>{updateProgress();autosave();});
+  el.addEventListener("change",()=>{updateProgress();autosave();});
+});
+
+/* ---- 스크롤 스텝 하이라이트 ---- */
+const secs=[ $("sec1"),$("sec2"),$("sec3"),$("sec4") ];
+window.addEventListener("scroll",()=>{
+  let cur=1;
+  secs.forEach((s,i)=>{ if(window.scrollY+160 >= s.offsetTop) cur=i+1; });
+  document.querySelectorAll(".progress span").forEach(sp=>{
+    sp.classList.toggle("on", +sp.dataset.step===cur);
+  });
+});
+
+/* ---- 헬퍼 ---- */
+function getTrack(){ const r=document.querySelector('input[name=track]:checked'); return r?r.value:""; }
+function get分야(){ return [...document.querySelectorAll('#분야 input:checked')].map(c=>c.value); }
+
+/* ---- 첨부파일 처리 ---- */
+const MAX_FILE_BYTES = 30*1024*1024; // 30MB
+function fileOf(id){ const el=$(id); return (el&&el.files&&el.files[0])||null; }
+function readFileB64(id){
+  return new Promise(resolve=>{
+    const f=fileOf(id);
+    if(!f){ resolve(null); return; }
+    const r=new FileReader();
+    r.onload=()=> resolve({ name:f.name, mime:f.type||"application/octet-stream", base64:String(r.result).split(",")[1] });
+    r.onerror=()=> resolve(null);
+    r.readAsDataURL(f);
+  });
+}
+// 용량 초과 시 경고 표시 + 입력 비우기
+function guardFileSize(inputId, warnId){
+  $(inputId).addEventListener("change", ()=>{
+    const f=fileOf(inputId);
+    if(f && f.size>MAX_FILE_BYTES){ $(warnId).style.display="block"; $(inputId).value=""; }
+    else { $(warnId).style.display="none"; }
+  });
+}
+guardFileSize("fileIR","warnIR");
+guardFileSize("fileBiz","warnBiz");
+
+/* ---- 데이터 수집 ---- */
+function collect(){
+  return {
+    기업명: val("기업명"), 창업아이템: val("창업아이템"),
+    사업장소재지: val("사업장소재지"), 청주소재: val("사업장소재지").includes("청주"),
+    신청Track: getTrack(), 창업여부: $("창업여부").value,
+    사업자등록번호: val("사업자등록번호"), 창업등록일: val("창업등록일"),
+    창업분야: get分야(), 딥테크: $("딥테크").checked, 기술핵심기관: val("기술핵심기관"),
+    대표자성명: val("대표자성명"), 생년월일: val("생년월일"),
+    휴대전화: val("휴대전화"), 이메일: val("이메일"),
+    개인정보동의: $("개인정보동의").checked,
+    사업아이템명: val("사업아이템명"), 한줄소개: val("한줄소개"),
+    사업아이템설명: val("사업아이템설명"),
+    LC1: val("LC1"), LC2: val("LC2"), LC3: val("LC3"), LC4: val("LC4"),
+    LC5: val("LC5"), LC6: val("LC6"), LC7: val("LC7"), LC8: val("LC8"), LC9: val("LC9"),
+    사업자등록증_첨부: !!fileOf("fileBiz")
+  };
+}
+
+/* ---- 임시저장 ---- */
+const SKEY="itc2026_draft";
+function autosave(){
+  const d={};
+  document.querySelectorAll("input,textarea,select").forEach(el=>{
+    if(el.type==="file") return; // 파일 입력은 저장 불가(보안)
+    if(el.type==="checkbox"||el.type==="radio"){ if(el.id||el.name) d[el.id||el.name+"::"+el.value]=el.checked; }
+    else if(el.id) d[el.id]=el.value;
+  });
+  d.__track=getTrack();
+  d.__savedAt=new Date().toISOString();
+  localStorage.setItem(SKEY,JSON.stringify(d));
+}
+function fmtDateTime(dt){
+  const p=n=>String(n).padStart(2,"0");
+  return `${dt.getFullYear()}.${p(dt.getMonth()+1)}.${p(dt.getDate())} ${p(dt.getHours())}:${p(dt.getMinutes())}:${p(dt.getSeconds())}`;
+}
+function setSaveStatus(msg){ const e=$("saveStatus"); if(e) e.textContent=msg; }
+let toastTimer=null;
+function toast(msg){
+  const t=$("toast"); if(!t) return;
+  t.textContent=msg; t.classList.add("on");
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("on"),2200);
+}
+function restore(){
+  const raw=localStorage.getItem(SKEY); if(!raw) return;
+  try{
+    const d=JSON.parse(raw);
+    document.querySelectorAll("input,textarea,select").forEach(el=>{
+      if(el.type==="file") return; // 파일 입력은 복구 불가(보안)
+      if(el.type==="checkbox"){ if(el.id && d[el.id]!=null) el.checked=d[el.id]; }
+      else if(el.id && d[el.id]!=null) el.value=d[el.id];
+    });
+    if(d.__track){ const r=document.querySelector('input[name=track][value="'+d.__track+'"]'); if(r)r.checked=true; }
+    if($("창업여부").value==="창업") $("bizRow").style.display="grid";
+    updateProgress();
+    if(d.__savedAt){ setSaveStatus("✍️ 이전 임시저장 내용을 복구했습니다 ("+fmtDateTime(new Date(d.__savedAt))+"). 계속 자동 저장됩니다."); }
+  }catch(e){}
+}
+
+/* 임시저장 버튼 */
+$("btnSaveDraft").addEventListener("click",()=>{
+  autosave();
+  setSaveStatus("💾 임시저장됨 · "+fmtDateTime(new Date()));
+  toast("💾 임시저장되었습니다");
+});
+
+/* 초기화 버튼 */
+$("btnReset").addEventListener("click",()=>{
+  if(!confirm("작성 중인 모든 내용과 임시저장 데이터를 초기화할까요?\n이 작업은 되돌릴 수 없습니다.")) return;
+  localStorage.removeItem(SKEY);
+  document.querySelectorAll("input,textarea,select").forEach(el=>{
+    if(el.type==="checkbox"||el.type==="radio") el.checked=false; else el.value="";
+  });
+  $("bizRow").style.display="none";
+  ["warn청주","ok청주","warn나이","ok나이","warn업력","warnIR","warnBiz"].forEach(id=>{ if($(id)) $(id).style.display="none"; });
+  updateProgress();
+  setSaveStatus("🔄 초기화되었습니다. 새로 작성해 주세요.");
+  toast("🔄 초기화되었습니다");
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+/* ---- PDF 본문 생성 ---- */
+function buildPdfHtml(d){
+  const esc=s=>(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>");
+  const cell=(n,t,v)=>`<div class="b"><b>${n}. ${t}</b>${esc(v)||'<span style="color:#aaa">-</span>'}</div>`;
+  return `
+    <h1>2026 충북청주강소특구 이노테크 창업 사업계획서</h1>
+    <h2>Ⅰ. 기업 · 대표자 정보</h2>
+    <table>
+      <tr><th>기업명/창업자명</th><td>${esc(d.기업명)}</td><th>신청 Track</th><td>${esc(d.신청Track)}</td></tr>
+      <tr><th>창업 아이템</th><td colspan="3">${esc(d.창업아이템)}</td></tr>
+      <tr><th>사업장 소재지</th><td colspan="3">${esc(d.사업장소재지)}</td></tr>
+      <tr><th>창업 여부</th><td>${esc(d.창업여부)}${d.사업자등록번호?(' / '+esc(d.사업자등록번호)):''}</td><th>창업 분야</th><td>${esc(d.창업분야.join(", "))}</td></tr>
+      <tr><th>대표자</th><td>${esc(d.대표자성명)} (${esc(d.생년월일)})</td><th>연락처</th><td>${esc(d.휴대전화)} / ${esc(d.이메일)}</td></tr>
+      <tr><th>기술핵심기관</th><td>${esc(d.기술핵심기관)||'-'}</td><th>딥테크</th><td>${d.딥테크?'해당(우대)':'-'}</td></tr>
+    </table>
+    <h2>Ⅱ. 사업 아이템 설명</h2>
+    <p style="font-weight:700;margin:4px 0;">${esc(d.사업아이템명)}${d.한줄소개?(' — '+esc(d.한줄소개)):''}</p>
+    <div class="pre" style="border:1px solid #cbd5e1;border-radius:5px;padding:10px;min-height:80px;">${esc(d.사업아이템설명)}</div>
+    <h2>Ⅲ. 비즈니스 모델 (린캔버스)</h2>
+    <div class="lcp">
+      ${cell(1,"문제",d.LC1)}${cell(2,"고객군",d.LC2)}${cell(3,"고유의 가치 제안",d.LC3)}
+      ${cell(4,"솔루션",d.LC4)}${cell(5,"채널",d.LC5)}${cell(6,"수익원",d.LC6)}
+      ${cell(7,"비용 구조",d.LC7)}${cell(8,"핵심 지표",d.LC8)}${cell(9,"경쟁 우위",d.LC9)}
+    </div>
+    <h2>Ⅳ. 개인정보 수집 · 이용 동의</h2>
+    <table>
+      <tr><th>수집 항목</th><td>성명, 생년월일, 소속/직위, 휴대전화/이메일</td></tr>
+      <tr><th>이용 목적</th><td>개인 식별, 공지사항 전달 등</td></tr>
+      <tr><th>보유 기간</th><td>제공일로부터 5년 후 삭제</td></tr>
+      <tr><th>동의 여부</th><td>${d.개인정보동의 ? "☑ 동의함" : "☐ 미동의"}</td></tr>
+    </table>
+    <p style="font-size:11px;color:#64748b;margin-top:4px;">개인정보 보호법 제15조에 의거 동의를 거부할 수 있으나, 거부 시 참가신청이 불가합니다. (관계법령: 개인정보 보호법 제15조, 제22조제1항·제2항)</p>
+    <p style="margin-top:18px;font-size:11px;color:#64748b;">본 문서는 온라인 신청서에서 자동 생성되었습니다. · 충북대학교기술지주(주)</p>
+  `;
+}
+function makePdfWorker(d){
+  const fname=`사업계획서_${d.기업명||"신청자"}_${(d.사업아이템명||"")}.pdf`.replace(/[\\/:*?"<>|]/g,"_");
+  // 캡처 안정화: 화면 밖 '고정(host)' 컨테이너 안에 정상 흐름(static) 자식으로 두고 캡처한다.
+  // (html2pdf 0.10 번들 html2canvas는 absolute/오프스크린 요소의 높이를 0으로 측정해
+  //  내용 없는 빈 PDF를 만드는 버그가 있어, static 자식으로 캡처해야 전체 높이가 잡힌다.)
+  let host=$("pdfHost");
+  if(!host){ host=document.createElement("div"); host.id="pdfHost"; document.body.appendChild(host); }
+  host.style.cssText="position:fixed;left:0;top:0;z-index:-1;opacity:0;pointer-events:none;width:794px;background:#fff;overflow:hidden;";
+  const area=$("pdfArea");
+  host.appendChild(area);
+  const PDF_W=794; // A4 폭(px). 캡처 폭/좌표를 명시해야 오른쪽이 잘리지 않는다.
+  area.style.cssText="position:static;left:auto;top:auto;width:"+PDF_W+"px;padding:28px 40px;background:#fff;font-size:13px;color:#111;";
+  area.innerHTML=buildPdfHtml(d);
+  return { worker: html2pdf().set({
+    margin:[8,8,8,8],
+    filename:fname,
+    image:{type:"jpeg",quality:0.95},
+    // width/windowWidth/x/scroll 미지정 시 html2canvas가 폭을 잘못 추정(734px, x≈266)해 우측이 잘림 → 명시
+    html2canvas:{scale:2,useCORS:true,backgroundColor:"#ffffff",width:PDF_W,windowWidth:PDF_W,x:0,y:0,scrollX:0,scrollY:0},
+    jsPDF:{unit:"mm",format:"a4",orientation:"portrait"},
+    pagebreak:{mode:["avoid-all","css","legacy"]}
+  }).from(area), fname };
+}
+
+/* ---- 캡처 중에는 페이지 최상단으로 스크롤 (필수) ----
+   html2pdf 0.10 번들 html2canvas는 '현재 스크롤 위치' 기준으로 캡처하므로,
+   사용자가 폼을 채우고 아래로 스크롤한 상태에서 캡처하면 문서 상단의 #pdfArea가
+   캡처 영역 밖이 되어 '빈(흰색) PDF'가 생성된다. 캡처 순간만 (0,0)으로 올렸다가 복원한다. */
+async function withScrollTop(fn){
+  const x=window.scrollX, y=window.scrollY;
+  const prevBehavior=document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior="auto";
+  window.scrollTo(0,0);
+  try{ return await fn(); }
+  finally{ window.scrollTo(x,y); document.documentElement.style.scrollBehavior=prevBehavior; }
+}
+
+/* ---- 미리보기/다운로드 ---- */
+$("btnPreview").addEventListener("click", async ()=>{
+  const d=collect();
+  if(!d.사업아이템설명 || !d.LC1){ toast("⚠ 사업아이템 설명과 린캔버스 ‘문제’ 항목을 먼저 작성해 주세요"); return; }
+  const btn=$("btnPreview"); const orig=btn.textContent;
+  btn.disabled=true; btn.textContent="📄 PDF 생성 중…"; toast("📄 PDF를 생성하고 있어요…");
+  try{
+    await withScrollTop(()=> makePdfWorker(d).worker.save());
+    toast("✅ PDF가 다운로드되었습니다");
+  }catch(err){
+    toast("PDF 생성 오류: "+((err&&err.message)||err));
+  }finally{
+    btn.disabled=false; btn.textContent=orig;
+  }
+});
+
+/* ---- 검증 ---- */
+function validate(d){
+  const errs=[];
+  if(!d.기업명) errs.push("기업명/창업자명");
+  if(!d.창업아이템) errs.push("창업 아이템(한 줄)");
+  if(!d.사업장소재지) errs.push("사업장 소재지");
+  if(!d.청주소재) errs.push("※ 청주시 소재(필수 자격)");
+  if(!d.신청Track) errs.push("신청 Track");
+  if(!d.창업여부) errs.push("창업 여부");
+  if(!d.창업분야.length) errs.push("창업 분야");
+  if(!d.대표자성명) errs.push("대표자 성명");
+  if(!d.생년월일) errs.push("생년월일");
+  if(!d.휴대전화) errs.push("휴대전화");
+  if(!d.이메일) errs.push("이메일");
+  if(!d.사업아이템명) errs.push("사업 아이템명");
+  if(!d.사업아이템설명) errs.push("① 사업 아이템 설명(필수)");
+  if(!d.LC1) errs.push("린캔버스 1.문제(필수)");
+  if(!d.LC2) errs.push("린캔버스 2.고객군(필수)");
+  if(!d.LC3) errs.push("린캔버스 3.고유의 가치 제안(필수)");
+  if(!d.LC4) errs.push("린캔버스 4.솔루션(필수)");
+  if(d.창업여부==="창업" && !d.사업자등록증_첨부) errs.push("사업자등록증 파일 첨부(창업자 필수)");
+  if(!d.개인정보동의) errs.push("개인정보 수집·이용 동의");
+  return errs;
+}
+
+/* ---- 모달 ---- */
+function showModal(html){ $("modalBody").innerHTML=html; $("overlay").classList.add("on"); }
+function closeModal(){ $("overlay").classList.remove("on"); }
+
+/* ---- 제출 ---- */
+$("btnSubmit").addEventListener("click", async ()=>{
+  const d=collect();
+  const errs=validate(d);
+  if(errs.length){
+    showModal(`<div class="ico">⚠️</div><h3>아직 작성하지 않은 항목이 있어요</h3>
+      <div style="text-align:left;font-size:13.5px;max-height:200px;overflow:auto;margin-top:8px;">• ${errs.join("<br>• ")}</div>
+      <button onclick="document.getElementById('overlay').classList.remove('on')">확인</button>`);
+    return;
+  }
+  if(GAS_URL.includes("붙여넣기")){
+    alert("⚙️ 관리자 설정 필요: 신청서.html 상단 GAS_URL에 GAS 웹앱 주소를 입력해야 제출이 작동합니다.");
+    return;
+  }
+  showModal(`<div class="spinner"></div><h3 style="margin-top:18px;">제출 중입니다…</h3><p style="color:#6b7280;font-size:13px;">사업계획서 PDF를 생성하고 접수하고 있어요.<br>잠시만 기다려 주세요.</p>`);
+
+  try{
+    // 1) PDF → base64
+    const {worker,fname}=makePdfWorker(d);
+    const pdfBase64 = await withScrollTop(()=> worker.outputPdf("datauristring")); // data:application/pdf;base64,....
+    d.pdfBase64 = pdfBase64.split(",")[1];
+    d.pdf파일명 = fname;
+
+    // 1-2) 첨부파일 → base64 (PDF에는 미반영, 노션 ①신청기업DB로 업로드)
+    d.회사소개서 = await readFileB64("fileIR");
+    d.사업자등록증 = await readFileB64("fileBiz");
+
+    // 2) GAS 전송
+    const res = await fetch(GAS_URL,{
+      method:"POST",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body: JSON.stringify(d)
+    });
+    const out = await res.json();
+    if(out.ok){
+      localStorage.removeItem(SKEY);
+      showModal(`<div class="ico">🎉</div><h3>신청이 접수되었습니다!</h3>
+        <div class="rn">제출번호 ${out.접수번호||""}</div>
+        <p style="font-size:13px;color:#64748b;margin:-2px 0 8px;">이 제출번호는 노션 관리 DB에 함께 저장되었습니다. 문의 시 번호를 알려주세요.</p>
+        <p style="font-size:13.5px;color:#475569;">입력하신 메일(<b>${d.이메일}</b>)로 접수확인서와 사업계획서 PDF가 발송되었습니다.<br>운영기관 검토 후 개별 안내드립니다.</p>
+        <button onclick="location.reload()">완료</button>`);
+    }else{
+      throw new Error(out.error||"서버 처리 오류");
+    }
+  }catch(err){
+    showModal(`<div class="ico">😢</div><h3>제출 중 오류가 발생했습니다</h3>
+      <p style="font-size:13px;color:#6b7280;">${(err&&err.message)||err}</p>
+      <p style="font-size:12.5px;color:#94a3b8;">잠시 후 다시 시도하거나, 미리보기로 PDF를 저장해 운영기관에 이메일로 제출해 주세요.</p>
+      <button onclick="document.getElementById('overlay').classList.remove('on')">닫기</button>`);
+  }
+});
+
+/* 초기화 */
+restore();
+updateProgress();
+</script>
+</body>
+</html>
