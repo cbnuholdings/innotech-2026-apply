@@ -234,7 +234,6 @@
       <div class="f">
         <label>생년월일<span class="req">*</span></label>
         <input type="date" id="생년월일">
-        <div class="warn" id="warn나이">⚠ 만 39세 미만 대상입니다 (청년·학생 트랙). 자격을 확인해 주세요.</div>
         <div class="ok-badge" id="ok나이"></div>
       </div>
     </div>
@@ -404,7 +403,6 @@ $("생년월일").addEventListener("change", e=>{
   if(m<0 || (m===0 && ref.getDate()<b.getDate())) age--;
   $("ok나이").textContent = "만 "+age+"세 (2026.6.8 기준)";
   $("ok나이").style.display="block";
-  $("warn나이").style.display = age>=39 ? "block" : "none";
 });
 
 /* ---- 업력 체크 ---- */
@@ -544,7 +542,7 @@ $("btnReset").addEventListener("click",()=>{
     if(el.type==="checkbox"||el.type==="radio") el.checked=false; else el.value="";
   });
   $("bizRow").style.display="none";
-  ["warn청주","ok청주","warn나이","ok나이","warn업력","warnIR","warnBiz"].forEach(id=>{ if($(id)) $(id).style.display="none"; });
+  ["warn청주","ok청주","ok나이","warn업력","warnIR","warnBiz"].forEach(id=>{ if($(id)) $(id).style.display="none"; });
   updateProgress();
   setSaveStatus("🔄 초기화되었습니다. 새로 작성해 주세요.");
   toast("🔄 초기화되었습니다");
